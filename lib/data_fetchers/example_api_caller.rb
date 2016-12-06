@@ -40,13 +40,16 @@ class ExampleApi
 
     ethnicity_hash = ethnicity_hash.sort_by {|key, value| value}.reverse
     if gender == "f"
+      puts "\n"
       puts "Top Five diseases for Females"
     else
+      puts "\n"
       puts "Top Five diseases for Males"
     end
     ethnicity_hash.each_with_index do |(key, value), index|
       if index < 5 
-        puts "#{key}: #{value.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} deaths"
+        puts "\n"
+        puts "#{index+1}. #{key}: #{value.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} deaths"
       end
     end
   end
@@ -65,10 +68,12 @@ class ExampleApi
     # puts ethnicity_hash
 
     ethnicity_hash = ethnicity_hash.sort_by {|key, value| value}.reverse
+    puts "\n"
     puts "Top Five diseases of #{ethnicity.capitalize} people"
     ethnicity_hash.each_with_index do |(key, value), index|
       if index < 5 
-        puts "#{key}: #{value.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} deaths"
+        puts "\n"
+        puts "#{index+1}. #{key}: #{value.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse} deaths"
       end
     end
 

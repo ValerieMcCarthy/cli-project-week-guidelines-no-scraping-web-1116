@@ -56,9 +56,7 @@ class ExampleCLI
       puts "Try again"
       run_top_gender
     end
-    death_hash = get_hash
-    death_hash.top_gender(gender)
-    play_again
+    search_top_gender(gender)
   end
 
   def get_hash
@@ -108,13 +106,21 @@ class ExampleCLI
       run_top_five
     end
     ethnicity = ethnicity.downcase
-    puts "The ethnicity you chose is #{ethnicity}, I am searching..."
+    search_top_five(ethnicity)
+  end
+
+  def search_top_five(input)
+    puts "The ethnicity you chose is #{input}, I am searching..."
     death_hash = get_hash
-    death_hash.top_five(ethnicity)
+    death_hash.top_five(input)
     play_again
   end
 
-  #def search_top_five(input)
+  def search_top_gender(input)
+    death_hash = get_hash
+    death_hash.top_gender(input)
+    play_again
+  end
 
 
 
